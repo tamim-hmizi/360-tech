@@ -1,11 +1,8 @@
-import {
-  FiTwitter,
-  FiYoutube,
-  FiFacebook,
-  FiInstagram,
-  FiGithub,
-} from "react-icons/fi";
+import { FiInstagram } from "react-icons/fi";
 import { FaTiktok } from "react-icons/fa";
+
+// Use Vite's base URL to support GitHub Pages or custom base
+const BASE = import.meta.env.BASE_URL;
 
 function Footer() {
   return (
@@ -13,7 +10,7 @@ function Footer() {
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <div className="flex items-center gap-4 mb-6 md:mb-0">
           <img
-            src="/logo.png"
+            src={`${BASE}logo.png`}
             alt="Logo"
             className="h-12 w-auto rounded-lg border-2 border-cyan-500/30 shadow-lg"
           />

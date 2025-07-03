@@ -1,30 +1,33 @@
 import React, { useState, useEffect } from "react";
 import { FiCheckCircle, FiAward } from "react-icons/fi";
 
+// Use Vite's base URL for image paths
+const BASE = import.meta.env.BASE_URL;
+
 const categoriesData = [
   {
     name: "Netflix",
-    image: "/netflix.png",
+    image: `${BASE}netflix.png`,
     subcategories: ["Basic", "Standard", "Premium"],
   },
   {
     name: "ChatGPT 4.0",
-    image: "/chatgpt.png",
+    image: `${BASE}chatgpt.png`,
     subcategories: ["Compte individuel", "Compte partagé"],
   },
   {
     name: "Canva Pro",
-    image: "/canva.png",
+    image: `${BASE}canva.png`,
     subcategories: ["Abonnement 1 an", "Abonnement 3 an"],
   },
   {
     name: "Capcut Pro",
-    image: "/capcut.png",
+    image: `${BASE}capcut.png`,
     subcategories: ["Abonnement 1 mois", "Abonnement 1 an"],
   },
   {
     name: "Carte Steam",
-    image: "/steam.png",
+    image: `${BASE}steam.png`,
     subcategories: [
       "Carte 5 $",
       "Carte 10 $",
@@ -38,7 +41,6 @@ const categoriesData = [
 const allPackages = {
   Basic: {
     price: "35 DT",
-    duration: "",
     features: [
       "Qualité vidéo : HD (720p)",
       "Écrans simultanés : 1",
@@ -49,7 +51,6 @@ const allPackages = {
   },
   Standard: {
     price: "50 DT",
-    duration: "",
     features: [
       "Qualité vidéo : Full HD (1080p)",
       "Écrans simultanés : 2",
@@ -60,7 +61,6 @@ const allPackages = {
   },
   Premium: {
     price: "55 DT",
-    duration: "",
     features: [
       "Qualité vidéo : Ultra HD 4K + HDR",
       "Écrans simultanés : 4",
@@ -71,7 +71,6 @@ const allPackages = {
   },
   "Compte individuel": {
     price: "90 DT",
-    duration: "",
     features: [
       "Accès : illimité, rapide, stable",
       "Compte avec votre mail personnel",
@@ -81,7 +80,6 @@ const allPackages = {
   },
   "Compte partagé": {
     price: "30 DT",
-    duration: "",
     features: [
       "Accès : illimité, rapide, stable",
       "Accès complet à GPT‑4, DALL-E, Humanize AI",
@@ -91,7 +89,6 @@ const allPackages = {
   },
   "Abonnement 1 an": {
     price: "30 DT",
-    duration: "",
     features: [
       "1 To de stockage, suppression d’arrière‑plan",
       "Magic Resize, bibliothèque premium (100 M+ éléments)",
@@ -100,7 +97,6 @@ const allPackages = {
   },
   "Abonnement 3 an": {
     price: "50 DT",
-    duration: "",
     features: [
       "1 To de stockage, suppression d’arrière‑plan",
       "Magic Resize, bibliothèque premium (100 M+ éléments)",
@@ -109,7 +105,6 @@ const allPackages = {
   },
   "Abonnement 1 mois": {
     price: "55 DT",
-    duration: "",
     features: [
       "Accès mobile, bureau et web",
       "Effets premium, transitions, IA",
