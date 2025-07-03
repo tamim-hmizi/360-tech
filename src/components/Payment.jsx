@@ -10,11 +10,11 @@ const Payment = () => {
   const methods = [
     { name: "D17", icon: <FiSend className="text-4xl" /> },
     { name: "Mybiat", icon: <FiTrendingUp className="text-4xl" /> },
-    { name: "UZB", icon: <FiMap className="text-4xl" /> },
-    { name: "Attijari Bank", icon: <FiCreditCard className="text-4xl" /> },
+    { name: "UIB App", icon: <FiMap className="text-4xl" /> },
+    { name: "Attijari Bank App", icon: <FiCreditCard className="text-4xl" /> },
     { name: "Versement Bancaire", icon: <FiDollarSign className="text-4xl" /> },
     { name: "Versement Postal", icon: <FiDollarSign className="text-4xl" /> },
-    { name: "Flousi", icon: <FiCreditCard className="text-4xl" /> },
+    { name: "Flouci", icon: <FiCreditCard className="text-4xl" /> },
   ];
 
   return (

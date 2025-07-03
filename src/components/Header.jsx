@@ -31,7 +31,7 @@ const Header = () => {
         {/* Description */}
         <p className="text-xl text-gray-300 mb-10 max-w-2xl leading-relaxed">
           Obtenez les meilleures offres sur vos services préférés.
-          <span className="text-cyan-300"> Comptes partagés </span>
+          <span className="text-cyan-300"> Comptes partagés et individuels </span>
           avec une disponibilité garantie.
         </p>
 

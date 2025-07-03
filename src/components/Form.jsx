@@ -115,7 +115,7 @@ const Form = ({ selectedOffer }) => {
         <div className="form-control col-span-1 md:col-span-2">
           <label className="label">
             <span className="label-text text-lg flex items-center text-gray-300">
-              <FiMail className="mr-2 text-cyan-400" /> Adresse e-mail
+              <FiMail className="mr-2 text-cyan-400" /> Adresse e-mail de votre compte
             </span>
           </label>
           <input
