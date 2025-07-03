@@ -7,7 +7,7 @@ const Form = ({ selectedOffer }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const formData = {
+    const formData = new URLSearchParams({
       prenom: e.target[0].value,
       nom: e.target[1].value,
       email: e.target[2].value,
@@ -17,7 +17,7 @@ const Form = ({ selectedOffer }) => {
       categorie: selectedOffer?.category || "",
       prix: selectedOffer?.price || "",
       details: (selectedOffer?.features || []).join(", "),
-    };
+    });
 
     try {
       await fetch(
@@ -25,9 +25,9 @@ const Form = ({ selectedOffer }) => {
         {
           method: "POST",
           headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "application/x-www-form-urlencoded",
           },
-          body: JSON.stringify(formData),
+          body: formData.toString(),
         }
       );
       setSubmitted(true);
