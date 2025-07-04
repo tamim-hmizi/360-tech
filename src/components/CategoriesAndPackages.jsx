@@ -211,8 +211,9 @@ const CategoriesAndPackages = ({ setSelectedOffer }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
             <div className="card w-full max-w-sm shadow-2xl bg-gray-800/80 border-2 border-cyan-500/50 backdrop-blur-sm">
               <div className="card-body text-center">
-                <h3 className="card-title text-3xl font-bold mb-2 justify-center text-white">
-                  {selectedService} <FiAward className="ml-2 text-cyan-400" />
+                <h3 className="card-title text-3xl font-bold mb-2 justify-center text-white flex items-center">
+                  {selectedService}{" "}
+                  <FiAward className="ml-2 text-cyan-400" size={24} />
                 </h3>
                 <div className="text-5xl font-extrabold mb-4 text-cyan-400">
                   {allPackages[selectedService]?.price}
@@ -222,9 +223,12 @@ const CategoriesAndPackages = ({ setSelectedOffer }) => {
                     (feature, idx) => (
                       <div
                         key={idx}
-                        className="flex items-center justify-center"
+                        className="flex items-center gap-2 text-left leading-snug"
                       >
-                        <FiCheckCircle className="text-cyan-400 mr-2" />
+                        <FiCheckCircle
+                          className="text-cyan-400 shrink-0"
+                          size={20}
+                        />
                         <span>{feature}</span>
                       </div>
                     )
