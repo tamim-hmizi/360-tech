@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { FiCheckCircle, FiAward } from "react-icons/fi";
 
-// Use Vite's base URL for image paths
 const BASE = import.meta.env.BASE_URL;
 
 const categoriesData = [
   {
     name: "Netflix",
     image: `${BASE}netflix.png`,
-    subcategories: ["Basic", "Standard", "Premium"],
+    subcategories: ["Basic – 1 mois", "Standard – 1 mois", "Premium – 1 mois"],
   },
   {
     name: "ChatGPT 4.0",
     image: `${BASE}chatgpt.png`,
-    subcategories: ["Compte individuel", "Compte partagé"],
+    subcategories: ["Compte individuel – 1 mois", "Compte partagé – 1 mois"],
   },
   {
     name: "Canva Pro",
@@ -39,7 +38,7 @@ const categoriesData = [
 ];
 
 const allPackages = {
-  Basic: {
+  "Basic – 1 mois": {
     price: "35 DT",
     features: [
       "Qualité vidéo : HD (720p)",
@@ -49,7 +48,7 @@ const allPackages = {
       "Idéal pour : une personne seule, usage simple",
     ],
   },
-  Standard: {
+  "Standard – 1 mois": {
     price: "50 DT",
     features: [
       "Qualité vidéo : Full HD (1080p)",
@@ -59,7 +58,7 @@ const allPackages = {
       "Idéal pour : un couple ou une petite famille",
     ],
   },
-  Premium: {
+  "Premium – 1 mois": {
     price: "55 DT",
     features: [
       "Qualité vidéo : Ultra HD 4K + HDR",
@@ -69,7 +68,7 @@ const allPackages = {
       "Idéal pour : familles nombreuses ou partage entre amis",
     ],
   },
-  "Compte individuel": {
+  "Compte individuel – 1 mois": {
     price: "90 DT",
     features: [
       "Accès : illimité, rapide, stable",
@@ -78,7 +77,7 @@ const allPackages = {
       "Idéal pour : usage sérieux ou professionnel",
     ],
   },
-  "Compte partagé": {
+  "Compte partagé – 1 mois": {
     price: "30 DT",
     features: [
       "Accès : illimité, rapide, stable",
