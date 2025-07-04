@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <header
       className="w-full h-[90vh] bg-cover bg-center relative"
-      style={{ backgroundImage: `url('${base}banner360tech.jpg')` }}
+      style={{ backgroundImage: `url('${base}header.jpg')` }}
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-cyan-900/70 to-transparent"></div>
