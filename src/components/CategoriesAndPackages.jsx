@@ -7,7 +7,12 @@ const categoriesData = [
   {
     name: "Netflix",
     image: `${BASE}netflix.png`,
-    subcategories: ["Basic – 1 mois", "Standard – 1 mois", "Premium – 1 mois"],
+    subcategories: [
+      "1 Profil dédié – 1 mois",
+      "Basic – 1 mois",
+      "Standard – 1 mois",
+      "Premium – 1 mois",
+    ],
   },
   {
     name: "ChatGPT 4.0",
@@ -17,7 +22,7 @@ const categoriesData = [
   {
     name: "Canva Pro",
     image: `${BASE}canva.png`,
-    subcategories: ["Abonnement 1 an", "Abonnement 3 an"],
+    subcategories: ["Abonnement 1 an", "Abonnement 3 ans"],
   },
   {
     name: "Capcut Pro",
@@ -38,6 +43,17 @@ const categoriesData = [
 ];
 
 const allPackages = {
+  "1 Profil dédié – 1 mois": {
+    price: "20 DT",
+    features: [
+      "Code PIN : Profil verrouillé (usage exclusif)",
+      "Qualité vidéo : Ultra HD 4K + HDR",
+      "Écrans simultanés : 4 (1 seul utilisé)",
+      "Téléchargements : jusqu’à 6 appareils",
+      "Audio : son spatial disponible",
+      "Idéal pour : 1 seul profil personnel dans un compte partagé",
+    ],
+  },
   "Basic – 1 mois": {
     price: "35 DT",
     features: [
@@ -94,7 +110,7 @@ const allPackages = {
       "Outils IA inclus",
     ],
   },
-  "Abonnement 3 an": {
+  "Abonnement 3 ans": {
     price: "50 DT",
     features: [
       "1 To de stockage, suppression d’arrière‑plan",
@@ -210,8 +226,8 @@ const CategoriesAndPackages = ({ setSelectedOffer }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
             <div className="card w-full max-w-sm shadow-2xl bg-gray-800/80 border-2 border-cyan-500/50 backdrop-blur-sm">
               <div className="card-body text-center">
-                <h3 className="card-title text-3xl font-bold mb-2 justify-center text-white flex items-center">
-                  {selectedService}{" "}
+                <h3 className="card-title text-xl font-bold mb-2 justify-center text-white flex items-center">
+                  {selectedService}
                   <FiAward className="ml-2 text-cyan-400" size={24} />
                 </h3>
                 <div className="text-5xl font-extrabold mb-4 text-cyan-400">
