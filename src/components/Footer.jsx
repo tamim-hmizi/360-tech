@@ -1,7 +1,6 @@
 import { FiInstagram } from "react-icons/fi";
 import { FaTiktok } from "react-icons/fa";
 
-// Use Vite's base URL to support GitHub Pages or custom base
 const BASE = import.meta.env.BASE_URL;
 
 function Footer() {

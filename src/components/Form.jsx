@@ -1,27 +1,45 @@
-import React, { useState } from "react";
-import { FiUser, FiPhone, FiMail, FiCheckCircle } from "react-icons/fi";
+import { useState } from "react";
+import {
+  FiUser,
+  FiPhone,
+  FiMail,
+  FiCheckCircle,
+  FiCreditCard,
+} from "react-icons/fi";
 
 const Form = ({ selectedOffer }) => {
   const [submitted, setSubmitted] = useState(false);
+
+  const paymentMethods = [
+    "D17",
+    "Mybiat",
+    "UIB App",
+    "Attijari Bank App",
+    "Versement Bancaire",
+    "Versement Postal",
+    "Flouci",
+  ];
+  const [paymentMethod, setPaymentMethod] = useState(paymentMethods[0]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const formData = new URLSearchParams({
-      prenom: e.target[0].value,
-      nom: e.target[1].value,
-      email: e.target[2].value,
-      telephone: e.target[3].value,
-      whatsapp: e.target[4].value,
+      prenom: e.target.prenom.value,
+      nom: e.target.nom.value,
+      email: e.target.email.value,
+      telephone: e.target.telephone.value,
+      whatsapp: e.target.whatsapp.value,
       offre: selectedOffer?.name || "",
       categorie: selectedOffer?.category || "",
       prix: selectedOffer?.price || "",
       details: (selectedOffer?.features || []).join(", "),
+      paiement: paymentMethod,
     });
 
     try {
       await fetch(
-        "https://script.google.com/macros/s/AKfycbyqN2W9xuhUbPA8BCFK0Hq5PB2GZ2JpfYrw7cLAaq-56z10YC0EHNVJjXyUM9BMfGcK9g/exec",
+        "https://script.google.com/macros/s/AKfycbxRcm64Oo8gHb1-CElu4uDp-sGyydA5llUVe0rxCM2wzQcTMCRKp0teSo-dq-4hZvFkYg/exec",
         {
           method: "POST",
           headers: {
@@ -91,6 +109,7 @@ const Form = ({ selectedOffer }) => {
             </span>
           </label>
           <input
+            name="prenom"
             type="text"
             placeholder="Prénom"
             className="input input-bordered w-full text-lg bg-gray-700 border-gray-600 text-white focus:border-cyan-400 focus:ring-1 focus:ring-cyan-500"
@@ -105,6 +124,7 @@ const Form = ({ selectedOffer }) => {
             </span>
           </label>
           <input
+            name="nom"
             type="text"
             placeholder="Nom"
             className="input input-bordered w-full text-lg bg-gray-700 border-gray-600 text-white focus:border-cyan-400 focus:ring-1 focus:ring-cyan-500"
@@ -115,10 +135,12 @@ const Form = ({ selectedOffer }) => {
         <div className="form-control col-span-1 md:col-span-2">
           <label className="label">
             <span className="label-text text-lg flex items-center text-gray-300">
-              <FiMail className="mr-2 text-cyan-400" /> Adresse e-mail de votre compte
+              <FiMail className="mr-2 text-cyan-400" /> Adresse e-mail de votre
+              compte
             </span>
           </label>
           <input
+            name="email"
             type="email"
             placeholder="exemple@email.com"
             className="input input-bordered w-full text-lg bg-gray-700 border-gray-600 text-white focus:border-cyan-400 focus:ring-1 focus:ring-cyan-500"
@@ -133,6 +155,7 @@ const Form = ({ selectedOffer }) => {
             </span>
           </label>
           <input
+            name="telephone"
             type="tel"
             placeholder="+216 XX XXX XXX"
             className="input input-bordered w-full text-lg bg-gray-700 border-gray-600 text-white focus:border-cyan-400 focus:ring-1 focus:ring-cyan-500"
@@ -147,11 +170,33 @@ const Form = ({ selectedOffer }) => {
             </span>
           </label>
           <input
+            name="whatsapp"
             type="tel"
             placeholder="+216 XX XXX XXX"
             className="input input-bordered w-full text-lg bg-gray-700 border-gray-600 text-white focus:border-cyan-400 focus:ring-1 focus:ring-cyan-500"
             required
           />
+        </div>
+
+        <div className="form-control col-span-1 md:col-span-2">
+          <label className="label">
+            <span className="label-text text-lg flex items-center text-gray-300">
+              <FiCreditCard className="mr-2 text-cyan-400" /> Méthode de
+              paiement
+            </span>
+          </label>
+          <select
+            value={paymentMethod}
+            onChange={(e) => setPaymentMethod(e.target.value)}
+            className="select select-bordered w-full text-lg bg-gray-700 border-gray-600 text-white focus:border-cyan-400 focus:ring-1 focus:ring-cyan-500"
+            required
+          >
+            {paymentMethods.map((method, idx) => (
+              <option key={idx} value={method}>
+                {method}
+              </option>
+            ))}
+          </select>
         </div>
       </div>
 

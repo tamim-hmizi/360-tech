@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { FiCheckCircle, FiAward } from "react-icons/fi";
 
 const BASE = import.meta.env.BASE_URL;
@@ -153,7 +153,6 @@ const CategoriesAndPackages = ({ setSelectedOffer }) => {
 
   return (
     <div className="p-6 mx-auto text-white">
-      {/* Catégories */}
       <div className="flex flex-wrap justify-center gap-6 mb-12">
         {categoriesData.map((cat, idx) => (
           <div
@@ -183,7 +182,6 @@ const CategoriesAndPackages = ({ setSelectedOffer }) => {
         ))}
       </div>
 
-      {/* Sous-catégories */}
       {selectedCategory && (
         <div className="mt-8 p-8 bg-gray-800/70 rounded-box shadow-xl border border-gray-700 backdrop-blur-sm">
           <h3 className="text-3xl font-bold text-cyan-400 mb-6">
@@ -217,7 +215,6 @@ const CategoriesAndPackages = ({ setSelectedOffer }) => {
         </div>
       )}
 
-      {/* Détails de l'offre */}
       {selectedService && (
         <div className="p-6 max-w-6xl mx-auto mt-12">
           <h2 className="text-4xl font-bold mb-8 text-center text-cyan-400">
