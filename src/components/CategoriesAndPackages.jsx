@@ -103,7 +103,7 @@ const allPackages = {
     ],
   },
   "Abonnement 1 an": {
-    price: "30 DT",
+    price: "280 DT",
     features: [
       "1 To de stockage, suppression d’arrière‑plan",
       "Magic Resize, bibliothèque premium (100 M+ éléments)",
