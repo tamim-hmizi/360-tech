@@ -22,12 +22,12 @@ const categoriesData = [
   {
     name: "Canva Pro",
     image: `${BASE}canva.png`,
-    subcategories: ["Abonnement 1 an", "Abonnement 3 ans"],
+    subcategories: ["Canva – Abonnement 1 an", "Abonnement 3 ans"],
   },
   {
     name: "Capcut Pro",
     image: `${BASE}capcut.png`,
-    subcategories: ["Abonnement 1 mois", "Abonnement 1 an"],
+    subcategories: ["Abonnement 1 mois", "Capcut – Abonnement 1 an"],
   },
   {
     name: "Carte Steam",
@@ -102,10 +102,12 @@ const allPackages = {
       "Utilisation simultanée possible, sans interruption",
     ],
   },
-  "Abonnement 1 an": {
-    price: "280 DT",
+  "Canva – Abonnement 1 an": {
+    price: "30 DT",
     features: [
-      "1 To de stockage, suppression d’arrière‑plan",
+      "Accès complet à toutes les fonctionnalités",
+      "1 To de stockage",
+      "Suppression d’arrière‑plan",
       "Magic Resize, bibliothèque premium (100 M+ éléments)",
       "Outils IA inclus",
     ],
@@ -124,6 +126,15 @@ const allPackages = {
       "Accès mobile, bureau et web",
       "Effets premium, transitions, IA",
       "Export 4K, stockage cloud, sans watermark",
+    ],
+  },
+  "Capcut – Abonnement 1 an": {
+    price: "280 DT",
+    features: [
+      "Accès sur mobile, bureau et web",
+      "Compte avec votre mail personnel",
+      "Effets premium, transitions, AI (suppression d’arrière‑plan, auto‑caption…)",
+      "Export vidéo 4K, stockage cloud, pas de watermark",
     ],
   },
   "Carte 5 $": { price: "38 DT", features: ["Carte Steam 5 USD"] },
